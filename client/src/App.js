@@ -1,11 +1,11 @@
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom'
-import Home from './screens/Home'
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import Chat from './screens/Chat'
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact render={props => <Home {...props}/>} />
+        <Route path="/" exact render={props => <Chat {...props}/>} />
         <Redirect to="/" />
       </Switch>
     </BrowserRouter>
