@@ -9,35 +9,34 @@ const cors = require('cors');
 
 // socket
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
 
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-if(process.env.NODE_ENV === "development") {
-    app.use(cors({
-        origin: process.env.CLIENT_URL
-    }));
-
-    app.use(morgan('dev'));
-}
+const io = require('socket.io')(http, {
+    cors: {
+        origin: "*"
+    }
+});
 
 const port = process.env.PORT;
 http.listen(port, () => console.log(`server running on port${port}`))
 
 // socket
 io.on('connection', socket => {
-    socket.on('newUser', data => { //on: 데이터를 받을때
-        io.emit('enter', data) //emit: 데이터를 보낼때
-    });
 
-    socket.on('message', data => {
-        console.log(data)
-        io.emit('upload', data)
+    const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
+    const { roomId } = socket.handshake.query;
+    socket.join(roomId);
+  
+    // Listen for new messages
+    socket.on("newChatMessage", (data) => { //on: 데이터를 받을때
+      io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, data); //emit: 데이터를 보낼때
     });
-
-    socket.on('leaveUser', nick => {
-        io.emit('out', nick)
-    })
+  
+    // Leave the room if the user closes the socket
+    socket.on("disconnect", () => {
+      socket.leave(roomId);
+    });
 });

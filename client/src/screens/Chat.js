@@ -1,19 +1,29 @@
-import React, {useState, useEffect} from 'react';
-import socketio from 'socket.io-client';
-import TextField from '@material-ui/core/TextField';
+import React, {useState} from 'react';
 
 const Chat = () => {
 
-    const [currentSocket, setCurrentSocket] = useState();
+    const [roomName, setRoomName] = useState("");
 
-    useEffect(() => {
-      setCurrentSocket(socketio("/"));
-    }, []);
+    const handleRoomNameChange = (event) => {
+      setRoomName(event.target.value);
+    };
 
     return (
-        <div>
-            chatss
-        </div>
+      <div className="home-container">
+        <input
+          type="text"
+          placeholder="Room"
+          value={roomName}
+          onChange={handleRoomNameChange}
+          className="text-input-field"
+        />
+        <a 
+          href={`/${roomName}`} 
+          className="enter-room-button"
+        >
+          Join room
+        </a>
+      </div>
     )
 }
 
