@@ -1,10 +1,15 @@
 
 require('dotenv').config();
 
+
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
+
+const http = require('http').createServer(app);
+const io = require('socket.io')(http);
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));

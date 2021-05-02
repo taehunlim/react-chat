@@ -11,9 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="660edf51-9225-4c2f-a680-fcd56ec81548" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +58,9 @@
       <workItem from="1619943936085" duration="1000" />
       <workItem from="1619943940137" duration="96000" />
       <workItem from="1619944051337" duration="33000" />
-      <workItem from="1619944095142" duration="513000" />
+      <workItem from="1619944095142" duration="602000" />
+      <workItem from="1619944733370" duration="2000" />
+      <workItem from="1619944951158" duration="373000" />
     </task>
     <servers />
   </component>
@@ -78,5 +81,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="947" y="130" key="RollbackChangesDialog" timestamp="1619944498521">
+      <screen x="0" y="25" width="1680" height="962" />
+    </state>
+    <state x="947" y="130" key="RollbackChangesDialog/0.25.1680.962@0.25.1680.962" timestamp="1619944498521" />
   </component>
 </project>
