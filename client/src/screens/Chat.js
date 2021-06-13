@@ -4,8 +4,8 @@ const Chat = () => {
 
     const [roomName, setRoomName] = useState("");
 
-    const handleRoomNameChange = (event) => {
-      setRoomName(event.target.value);
+    const handleRoomNameChange = (e) => {
+      setRoomName(e.target.value);
     };
 
     return (

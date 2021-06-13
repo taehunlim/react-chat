@@ -8,8 +8,8 @@ const ChatRoom = (props) => {
   const { roomId } = props.match.params; // Gets roomId from URL
   const { messages, sendMessage } = useChat(roomId); // Creates a websocket and manages messaging
 
-  const handleNewMessageChange = (event) => {
-    setNewMessage(event.target.value);
+  const handleNewMessageChange = (e) => {
+    setNewMessage(e.target.value);
   };
 
   const handleSendMessage = () => {
